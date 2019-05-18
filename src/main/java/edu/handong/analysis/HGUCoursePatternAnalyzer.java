@@ -2,6 +2,7 @@ package edu.handong.analysis;
 
 import edu.handong.analysis.datamodel.Course;
 import edu.handong.analysis.datamodel.Student;
+import java.util.ArrayList;
 
 public class HGUCoursePatternAnalyzer {
 
@@ -21,8 +22,10 @@ public class HGUCoursePatternAnalyzer {
 
 	int numOfStudents;
 	int numOfCourses;
-	Student[] students;
-	Course[] courses;
+	private ArrayList<Student> students;
+	private ArrayList<Course> courses;
+	//	Student[] students;
+//	Course[] courses;
 
 	/**
 	 * This method runs our analysis logic to get the list of student and course names from lines.
@@ -54,7 +57,7 @@ public class HGUCoursePatternAnalyzer {
 	 * @param lines
 	 * @return
 	 */
-	private Student[] initiateStudentArrayFromLines(String[] lines) {
+	private ArrayList<Student> initiateStudentArrayFromLines(String[] lines) {
 		int j=0;
 		int nameLength = lines.length;
 		String[] names = new String[nameLength];
@@ -77,10 +80,11 @@ public class HGUCoursePatternAnalyzer {
 
 		}
 
-		Student[] myStudent2 = new Student[j];
+		ArrayList<Student> myStudent2 = new ArrayList<Student>();
 
 		for(int i=0;i<j;i++) {
-			myStudent2[i] = myStudent[i];
+			myStudent2.add(myStudent[i]);
+//			myStudent2[i] = myStudent[i];
 		}
 		// TODO: implement this method
 
@@ -115,7 +119,7 @@ public class HGUCoursePatternAnalyzer {
 	 * @param lines
 	 * @return
 	 */
-	private Course[] initiateCourseArrayFromLines(String[] lines) {
+	private ArrayList<Course> initiateCourseArrayFromLines(String[] lines) {
 
 		int j=0;
 		int nameLength = lines.length;
@@ -139,10 +143,11 @@ public class HGUCoursePatternAnalyzer {
 
 		}
 
-		Course[] myCourse2 = new Course[j];
+		ArrayList<Course> myCourse2 = new ArrayList<Course>();
 
 		for(int i=0;i<j;i++) {
-			myCourse2[i] = myCourse[i];
+			myCourse2.add(myCourse[i]);
+//			myCourse2[i] = myCourse[i];
 		}
 
 		// TODO: implement this method
